@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@drawable/bwhite"
+    tools:context="tutor.ajakteman.LoginActivity">
+
+    <ImageView
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_hijau"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:text="masuk"
+            android:textSize="70sp"
+            android:textColor="@color/colorPrimary"
+            android:textAlignment="center"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/ETEmailLogin"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:inputType="textEmailAddress"
+            android:hint=" Email kamu"
+            android:drawableStart="@drawable/ic_email"
+            android:drawableLeft="@drawable/ic_email" />
+
+        <EditText
+            android:id="@+id/ETPasswordLogin"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:inputType="textPassword"
+            android:hint=" Kata sandi"
+            android:drawableStart="@drawable/ic_pass"
+            android:drawableLeft="@drawable/ic_pass" />
+
+        <Button
+            android:id="@+id/BtnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_border_green"
+            android:text="masuk"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="false"
+            android:textSize="20sp"/>
+
+        <!---<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="Login dengan akun lain?"
+            android:textAlignment="center"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"/> -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_alignParentBottom="true">
+
+       <!--- <ImageButton
+            android:id="@+id/BtnFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded_border_white"
+            android:src="@drawable/google"/>
+
+        <ImageButton
+            android:id="@+id/BtnGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/rounded_border_white"
+            android:src="@drawable/fb"/> -->
+
+    </LinearLayout>
+
+</RelativeLayout>

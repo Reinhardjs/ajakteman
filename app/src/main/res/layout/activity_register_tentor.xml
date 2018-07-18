@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bwhite"
+    tools:context="tutor.ajakteman.RegisterTentorActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="25dp">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/logo_hijau"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-12dp"
+                        android:text="daftar"
+                        android:textColor="@color/colorPrimary"
+                        android:textAlignment="center"
+                        android:textSize="80sp"/>
+
+                    <EditText
+                        android:id="@+id/ETRegisterTutorNama"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="nama"
+                        android:padding="5dp" />
+
+                    <EditText
+                        android:id="@+id/ETRegisterTutorAlamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="5dp"
+                        android:hint="alamat"/>
+
+                    <EditText
+                        android:id="@+id/ETRegisterTutorEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="5dp"
+                        android:hint="email"/>
+
+                    <EditText
+                        android:id="@+id/ETRegisterTutorPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="5dp"
+                        android:hint="kata sandi"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Jenjang"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="18sp"
+                                android:textStyle="bold"/>
+
+                            <CheckBox
+                                android:id="@+id/CBJenjangSD"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SD"/>
+
+                            <CheckBox
+                                android:id="@+id/CBJenjangSMP"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SMP"/>
+
+                            <CheckBox
+                                android:id="@+id/CBJenjangSMA"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SMA"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Kelas"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="18sp"
+                                android:textStyle="bold"/>
+
+                            <CheckBox
+                                android:id="@+id/CBKelas1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"/>
+
+                            <CheckBox
+                                android:id="@+id/CBKelas2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2"/>
+
+                            <CheckBox
+                                android:id="@+id/CBKelas3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3"/>
+
+                            <CheckBox
+                                android:id="@+id/CBKelas4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4"/>
+
+                            <CheckBox
+                                android:id="@+id/CBKelas5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5"/>
+
+                            <CheckBox
+                                android:id="@+id/CBKelas6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="6"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Pelajaran"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <CheckBox
+                                android:id="@+id/PelajaranBI"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Bahasa Indonesia" />
+
+                            <CheckBox
+                                android:id="@+id/PelajaranBIng"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Bahasa Inggris" />
+
+                            <CheckBox
+                                android:id="@+id/PelajaranMat"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Matematika" />
+
+                            <CheckBox
+                                android:id="@+id/PelajaranIPA"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="IPA" />
+
+                            <CheckBox
+                                android:id="@+id/PelajaranFIS"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Fisika" />
+
+                            <CheckBox
+                                android:id="@+id/PelajaranKIM"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Kimia" />
+
+                            <CheckBox
+                                android:id="@+id/PelajaranIPS"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="IPS" />
+
+                            <CheckBox
+                                android:id="@+id/PelajaranEKO"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Ekonomi" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*bisa pilih>1"
+                        android:textColor="@color/colorAccent"
+                        android:textAlignment="center"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:text="track record"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="30sp"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="deskripsi"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp"/>
+
+                    <EditText
+                        android:id="@+id/ETRegisterTutorDeskripsi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="3"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="pengalaman"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp"/>
+
+                    <EditText
+                        android:id="@+id/ETRegisterTutorPengalaman1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="3"/>
+
+                    <EditText
+                        android:id="@+id/ETRegisterTutorPengalaman2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="3"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="pendidikan"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp"/>
+
+                    <EditText
+                        android:id="@+id/ETRegisterTutorPendidikan1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="3"/>
+
+                    <EditText
+                        android:id="@+id/ETRegisterTutorPendidikan2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="3"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="skill"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp"/>
+
+                    <EditText
+                        android:id="@+id/ETRegisterTutorSkill1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="3"/>
+
+                    <EditText
+                        android:id="@+id/ETRegisterTutorSkill2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="3"/>
+
+                    <Button
+                        android:id="@+id/BtnRegisterTermCond"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Terms and Condition"
+                        android:background="@drawable/mainactivityborder"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20sp"/>
+
+                    <Button
+                        android:id="@+id/BtnRegisterTutor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Register"
+                        android:background="@drawable/rounded_border_green"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

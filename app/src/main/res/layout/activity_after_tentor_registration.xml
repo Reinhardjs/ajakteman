@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bwhite"
+    tools:context="tutor.ajakteman.AfterTentorRegistrationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="25dp"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mulai jadi"
+            android:textColor="@color/colorPrimary"
+            android:textSize="40sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-15dp"
+            android:text="tutor sekarang!"
+            android:textColor="@color/colorPrimary"
+            android:textSize="40sp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rounded_border_green"
+            android:text="pilih kelas"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+</RelativeLayout>

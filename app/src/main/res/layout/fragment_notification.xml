@@ -1,0 +1,64 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tutor.ajakteman.fragment.NotificationFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="tunggu"
+                android:textSize="65sp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-19dp"
+                android:text="notifikasi"
+                android:textSize="65sp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-28dp"
+                android:text="selanjutnya!"
+                android:textSize="65sp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+            
+            <Button
+                android:id="@+id/BtnNotificationOK"
+                android:layout_gravity="center"
+                android:layout_width="290dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="25sp"
+                android:background="@drawable/rounded_border_green"
+                android:text="oke"
+                android:textSize="28sp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"/>
+            
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

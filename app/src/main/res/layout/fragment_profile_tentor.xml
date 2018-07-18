@@ -1,0 +1,235 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tutor.ajakteman.fragment.ProfileTentorFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:id="@+id/FotoProfile"
+                        android:layout_width="200dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="0.7"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:padding="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/MenuProfileSiswaNama"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Zubaedah"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="22sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/MenuProfileSiswaUmur"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="19 Tahun"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="125dp"
+                        android:layout_weight="0.75">
+
+                        <TextView
+                            android:id="@+id/MenuProfileTentorGrade"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorAlamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="alamat    : "
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorKontenAlamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="email     : "
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorKontenEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorProfesi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="profesi   : "
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorKontenProfesi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorPelajaran"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="pelajaran yang diminati     : "
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorKontenPelajaran"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorPengalaman"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="pengalaman    : "
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorKontenPengalaman"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorAchievement"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="achievement   : "
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorKontenAchievement"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorSkill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="skill     : "
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorKontenSkill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorDeskripsi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="deskripsi   : "
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileTentorKontenDeskripsi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</FrameLayout>

@@ -1,0 +1,71 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tutor.ajakteman.fragment.BerandaFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- TODO: Update blank fragment layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:src="@drawable/iconpeople"
+                android:contentDescription="TODO" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="''yuk, ajak teman kamu untuk belajar bareng.''"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="32sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:padding="15dp">
+
+            <Button
+                android:id="@+id/BtnSiswa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_border_green"
+                android:text="siswa"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10sp"/>
+
+            <Button
+                android:id="@+id/BtnTutor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_border_green"
+                android:text="tutor"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20sp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

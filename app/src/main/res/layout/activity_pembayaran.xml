@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tutor.ajakteman.PembayaranActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/mainactivityborder"
+            android:padding="4dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="tutorial"
+                android:textColor="@color/colorPrimary"
+                android:textAlignment="center"
+                android:textSize="55sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-23dp"
+                android:text="pembayaran"
+                android:textColor="@color/colorPrimary"
+                android:textAlignment="center"
+                android:textSize="34sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="lakukan transaksi
+dalam 1 x 24 jam"
+                        android:textColor="@color/colorPrimary"
+                        android:textAlignment="center"
+                        android:textSize="25sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="konfirmasi foto bukti transaksi melalui chat ajak.teman"
+                        android:textColor="@color/colorPrimary"
+                        android:textAlignment="center"
+                        android:textSize="25sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="akan ada konfirmasi dari team ajak.teman"
+                        android:textColor="@color/colorPrimary"
+                        android:textAlignment="center"
+                        android:textSize="25sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="your fun study time is ready to begin !"
+                        android:textColor="@color/colorPrimary"
+                        android:textAlignment="center"
+                        android:textSize="25sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="bayar"
+                        android:textColor="@color/colorPrimary"
+                        android:textAlignment="center"
+                        android:textSize="60sp"
+                        android:textStyle="bold"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="Jumlah yang dibayarkan"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimary"/>
+
+                        <TextView
+                            android:id="@+id/MenuBayarNominal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text=""
+                            android:textColor="@color/colorPrimary"
+                            android:textAlignment="center"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="Batas bayar"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:textColor="@color/colorPrimary"/>
+
+                        <TextView
+                            android:id="@+id/MenuBayarBatasWaktu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text=""
+                            android:textColor="@color/colorPrimary"
+                            android:textAlignment="center"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

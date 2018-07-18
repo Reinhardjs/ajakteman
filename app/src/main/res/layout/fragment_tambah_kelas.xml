@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="tutor.ajakteman.fragment.TambahKelasFragment"
+    android:gravity="center"
+    android:paddingHorizontal="40dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="buka kelas"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:layout_marginBottom="-20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="baru sekarang!"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:layout_marginBottom="40dp"/>
+    <Button
+        android:id="@+id/BtnAjakTemanTambahKelas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/squared_background_green"
+        android:text="ajak teman"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/colorWhite"
+        android:layout_marginBottom="35dp"/>
+    <Button
+        android:id="@+id/BtnPrivateTambahKelas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/squared_background_green"
+        android:text="private"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/colorWhite"/>
+
+
+</LinearLayout>

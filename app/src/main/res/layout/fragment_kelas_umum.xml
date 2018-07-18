@@ -1,0 +1,146 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tutor.ajakteman.fragment.AjakTemanFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ajak teman kamu"
+                    android:textAlignment="center"
+                    android:textSize="30sp"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-16dp"
+                    android:text="buka kelas baru!"
+                    android:textAlignment="center"
+                    android:textSize="30sp"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/iconpeople"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="3"
+                android:layout_centerInParent="true"
+                android:padding="5dp">
+
+                <Spinner
+                    android:id="@+id/SpinnerJenjang"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/squared_background_green"/>
+
+                <Spinner
+                    android:id="@+id/SpinnerKelas"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/squared_background_green"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="3"
+                android:layout_centerInParent="true"
+                android:padding="10dp">
+
+                <Spinner
+                    android:id="@+id/SpinnerJurusan"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/squared_background_green"/>
+
+                <Spinner
+                    android:id="@+id/SpinnerPelajaran"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/squared_background_green"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="25dp"
+                android:layout_centerInParent="true">
+
+                <EditText
+                    android:id="@+id/ETMateri"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="hari/tanggal:"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"/>
+
+                <DatePicker
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                </DatePicker>
+
+                <EditText
+                    android:id="@+id/ETTempat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:layout_gravity="center"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/squared_background_green"
+                    android:text="mulai"
+                    android:textSize="25sp"
+                    android:textColor="@color/colorWhite"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

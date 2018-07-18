@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context="tutor.ajakteman.RegisterSiswaActivity">
+    
+    <ImageView
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/logo_hijau"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:text="daftar"
+            android:textSize="70dp"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/ETNamaRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:hint=" Nama kamu"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:drawableStart="@drawable/namaregist"
+            android:drawableLeft="@drawable/namaregist" />
+
+        <EditText
+            android:id="@+id/ETAlamatRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:hint=" Alamat kamu"
+            android:inputType="text"
+            android:singleLine="true"
+            android:drawableStart="@drawable/alamatregist"
+            android:drawableLeft="@drawable/alamatregist" />
+
+        <EditText
+            android:id="@+id/ETEmailRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:hint=" Email kamu"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:drawableStart="@drawable/ic_email"
+            android:drawableLeft="@drawable/ic_email" />
+
+        <EditText
+            android:id="@+id/ETPassRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:hint=" Kata sandi"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:drawableStart="@drawable/ic_pass"
+            android:drawableLeft="@drawable/ic_pass" />
+
+        <EditText
+            android:id="@+id/ETJenjangPendRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="55dp"
+            android:padding="5dp"
+            android:hint=" Jenjang pendidikan"
+            android:inputType="text"
+            android:singleLine="true"
+            android:drawableStart="@drawable/jpregist"
+            android:drawableLeft="@drawable/jpregist" />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/BtnBuatAkun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_border_green"
+            android:layout_marginBottom="50sp"
+            android:text="Buat akun"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_Beramda"
+        android:title="Beranda"
+        android:icon="@drawable/iconnotif"
+        android:iconTint="@color/colorAccent"/>
+    <item
+        android:id="@+id/navigation_Chat"
+        android:title="Chat"
+        android:icon="@drawable/icon_chat"
+        android:iconTint="@color/colorAccent"/>
+    <item
+        android:id="@+id/navigation_Tambah_Kelas"
+        android:title="Tambah Kelas"
+        android:icon="@drawable/icon_tambah_kelas"
+        android:iconTint="@color/colorAccent"/>
+    <item
+        android:id="@+id/navigation_Profil"
+        android:title="Profil"
+        android:icon="@drawable/icon_profil"
+        android:iconTint="@color/colorAccent"/>
+    <item
+        android:id="@+id/navigation_Tentang"
+        android:title="Tentang"
+        android:icon="@drawable/icon_tentang"
+        android:iconTint="@color/colorAccent"/>
+
+</menu>

@@ -1,0 +1,109 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tutor.ajakteman.fragment.ProfileSiswaFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <ImageView
+                    android:id="@+id/FotoProfile"
+                    android:layout_width="100dp"
+                    android:layout_height="125dp"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/MenuProfileSiswaNama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="22sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/MenuProfileSiswaUmur"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="19 Tahun (Ini gak ada di penginputan data)"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/MenuProfileSiswaAlamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:id="@+id/MenuProfileSiswaEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:id="@+id/MenuProfileSiswaJenjang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:id="@+id/MenuProfileSiswaKelas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="kelas     : (Ini Juga)"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="17sp"/>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/MenuProfileSiswaButtonLogOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:background="@drawable/rounded_border_green"
+                android:text="Log OUt sementara"
+                android:textColor="@color/colorWhite"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
