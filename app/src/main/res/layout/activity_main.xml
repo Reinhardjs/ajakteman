@@ -52,6 +52,4 @@
         app:itemTextColor="@color/colorPrimary"
         app:menu="@menu/navigation" />
 
-
-
 </LinearLayout>

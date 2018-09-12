@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "706505930381",
-    "firebase_url": "https://ajak-teman.firebaseio.com",
-    "project_id": "ajak-teman",
-    "storage_bucket": "ajak-teman.appspot.com"
+    "project_number": "681755038279",
+    "firebase_url": "https://ajak-teman-8bdf3.firebaseio.com",
+    "project_id": "ajak-teman-8bdf3",
+    "storage_bucket": "ajak-teman-8bdf3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:706505930381:android:bfc485568115e007",
+        "mobilesdk_app_id": "1:681755038279:android:bfc485568115e007",
         "android_client_info": {
           "package_name": "tutor.ajakteman"
         }
       },
       "oauth_client": [
         {
-          "client_id": "706505930381-jbjbg00ns1mus8p73v4uo2v4cru0trde.apps.googleusercontent.com",
+          "client_id": "681755038279-7nspcpc2k77qsuo2ufmtiluj2s1i7o8b.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCgNcCirDIKXMM8ujIuhGbK2hrYILPpGuw"
+          "current_key": "AIzaSyBzmF16cLqbm-rRWaykk_ySPLLZeJgAN-I"
         }
       ],
       "services": {

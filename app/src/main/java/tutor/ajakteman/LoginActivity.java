@@ -9,7 +9,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -49,9 +48,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
     private void login(){
-        String email = this.email.getText().toString().trim(),
-                password = this.password.getText().toString().trim();
+        String email = this.email.getText().toString().trim(), password = this.password.getText().toString().trim();
 
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this,"Email can not be Empty",Toast.LENGTH_SHORT).show();
