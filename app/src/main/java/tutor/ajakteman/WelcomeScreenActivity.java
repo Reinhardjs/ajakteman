@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import tutor.ajakteman.siswa.WelcomeScreenSiswa;
+import tutor.ajakteman.tentor.WelcomeScreenTentor;
+
 public class WelcomeScreenActivity extends AppCompatActivity {
 
     @Override

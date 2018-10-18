@@ -1,61 +1,71 @@
 package tutor.ajakteman;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabSelectListener;
+import tutor.ajakteman.adapter.MyPagerAdapter;
 
-import tutor.ajakteman.fragment.BerandaFragment;
-import tutor.ajakteman.fragment.ChatFragment;
-import tutor.ajakteman.fragment.ProfileSiswaFragment;
-import tutor.ajakteman.fragment.TambahKelasFragment;
-import tutor.ajakteman.fragment.TentangFragment;
+public class MainActivity extends AppCompatActivity implements OnTabSelectListener, ViewPager.OnPageChangeListener {
 
-public class MainActivity extends AppCompatActivity {
-    private BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            switch (item.getItemId()) {
-                case R.id.navigation_Beramda:
-                    fragmentTransaction.replace(R.id.main_Frame,new BerandaFragment()).commit();
-                    return true;
-                case R.id.navigation_Chat:
-                    fragmentTransaction.replace(R.id.main_Frame,new ChatFragment()).commit();
-                    return true;
-                case R.id.navigation_Tambah_Kelas:
-                    fragmentTransaction.replace(R.id.main_Frame,new TambahKelasFragment()).commit();
-                    return true;
-                case R.id.navigation_Profil:
-                    fragmentTransaction.replace(R.id.main_Frame,new ProfileSiswaFragment()).commit();
-                    return true;
-                case R.id.navigation_Tentang:
-                    fragmentTransaction.replace(R.id.main_Frame,new TentangFragment()).commit();
-                    return true;
-            }
-            return false;
-        }
-    };
+    ViewPager viewPager;
+    BottomBar bottomBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.main_Frame, new TambahKelasFragment()).commit();
+        MyPagerAdapter pagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
-        bottomNavigationView.getMenu().findItem(R.id.navigation_Tambah_Kelas).setChecked(true);
-        bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
+        viewPager = findViewById(R.id.viewPager);
+        viewPager.setAdapter(pagerAdapter);
+        viewPager.setOffscreenPageLimit(3);
+        viewPager.setOnPageChangeListener(this);
+
+        bottomBar = (BottomBar) findViewById(R.id.bottomBar);
+        bottomBar.setOnTabSelectListener(this);
+    }
+
+//    @Override
+//    public void onBackPressed() {
+//        moveTaskToBack(true);
+//    }
+
+    @Override
+    public void onTabSelected(int tabId) {
+        switch (tabId){
+            case R.id.notifikasi:
+                viewPager.setCurrentItem(0);
+                break;
+            case R.id.chat:
+                viewPager.setCurrentItem(1);
+                break;
+            case R.id.tambahKelas:
+                viewPager.setCurrentItem(2);
+                break;
+            case R.id.profil:
+                viewPager.setCurrentItem(3);
+                break;
+            case R.id.tentang:
+                viewPager.setCurrentItem(4);
+                break;
+        }
     }
 
     @Override
-    public void onBackPressed() {
-        moveTaskToBack(true);
+    public void onPageSelected(int position) {
+        bottomBar.selectTabAtPosition(position, true);
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
     }
 }

@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import tutor.ajakteman.data.Siswa;
+
 public class RegisterSiswaActivity extends AppCompatActivity {
 
     private Button buttonRegister;

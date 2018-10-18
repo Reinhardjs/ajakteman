@@ -13,15 +13,15 @@
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginActivity"/>
-        <activity android:name=".WelcomeScreenTentor" />
-        <activity android:name=".WelcomeScreenSiswa"/>
+        <activity android:name=".tentor.WelcomeScreenTentor" />
+        <activity android:name=".siswa.WelcomeScreenSiswa"/>
         <activity android:name=".RegisterSiswaActivity"/>
         <activity android:name=".WelcomeScreenActivity" />
         <activity android:name=".RegisterTentorActivity">
 
         </activity>
         <activity android:name=".AfterTentorRegistrationActivity" />
-        <activity android:name=".PembayaranActivity"></activity>
+        <activity android:name=".pembayaran.PembayaranActivity"></activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -3,9 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="tutor.ajakteman.fragment.TambahKelasFragment"
+    tools:context=".siswa.kelas.TambahKelasFragment"
     android:gravity="center"
     android:paddingHorizontal="40dp">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,6 +15,7 @@
         android:textStyle="bold"
         android:textSize="40sp"
         android:layout_marginBottom="-20dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,6 +24,7 @@
         android:textStyle="bold"
         android:textSize="40sp"
         android:layout_marginBottom="40dp"/>
+
     <Button
         android:id="@+id/BtnAjakTemanTambahKelas"
         android:layout_width="match_parent"
@@ -33,6 +36,7 @@
         android:textSize="20sp"
         android:textColor="@color/colorWhite"
         android:layout_marginBottom="35dp"/>
+
     <Button
         android:id="@+id/BtnPrivateTambahKelas"
         android:layout_width="match_parent"
@@ -43,6 +47,5 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:textColor="@color/colorWhite"/>
-
 
 </LinearLayout>

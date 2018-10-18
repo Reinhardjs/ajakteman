@@ -1,55 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="tutor.ajakteman.MainActivity"
     android:background="@drawable/bwhite">
 
-    <LinearLayout
+    <com.roughike.bottombar.BottomBar
+        android:id="@+id/bottomBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ajak."
-            android:textColor="@color/colorPrimary"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textSize="40sp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-24dp"
-            android:text="teman"
-            android:textColor="@color/colorPrimary"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textSize="40sp"/>
-
-    </LinearLayout>
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        app:bb_activeTabColor="@color/activeBottomTabColor"
+        app:bb_inActiveTabColor="@color/inActiveBottomTabColor"
+        app:bb_tabXmlResource="@xml/bottombar_tabs"/>
 
     <FrameLayout
-        android:id="@+id/main_Frame"
+        android:id="@+id/layout_profile_fragment"
+        android:background="#FFF"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@drawable/mainactivityborder"
-        tools:ignore="Suspicious0dp">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/bottomBar"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </FrameLayout>
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:itemTextColor="@color/colorPrimary"
-        app:menu="@menu/navigation" />
-
-</LinearLayout>
+</RelativeLayout>

@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import tutor.ajakteman.data.Tentor;
+
 public class RegisterTentorActivity extends AppCompatActivity {
     private EditText editTextNama, editTextAlamat, editTextEmail, editTextPass, editTextDesk, editTextPengalaman1, editTextPengalaman2, editTextPendidikan1, editTextPendidikan2,editTextSkill, editTextSkill2;
     private Button buttonRegister;

@@ -1,0 +1,164 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".siswa.kelas.umum.carikelas.CariKelasFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="ajak teman kamu"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textSize="30sp"-->
+                    <!--android:textColor="@color/colorPrimary"-->
+                    <!--android:textStyle="bold"/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="-16dp"-->
+                    <!--android:text="buka kelas baru!"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textSize="30sp"-->
+                    <!--android:textColor="@color/colorPrimary"-->
+                    <!--android:textStyle="bold"/>-->
+            <!--</LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="3"
+                android:layout_centerInParent="true"
+                android:padding="5dp">
+
+                <Spinner
+                    android:id="@+id/spinnerJenjang"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/squared_background_green" />
+
+                <!--android:entries="@array/spinner_arrays"-->
+                <!--android:prompt="@string/jenjang_prompt"-->
+
+                <Spinner
+                    android:id="@+id/spinnerKelas"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/squared_background_green" />
+
+                <!--android:entries="@array/spinner_arrays"-->
+                <!--android:prompt="@string/kelas_prompt"-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="3"
+                android:layout_centerInParent="true"
+                android:padding="10dp">
+
+                <Spinner
+                    android:id="@+id/spinnerJurusan"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/squared_background_green" />
+
+                <!--android:entries="@array/spinner_arrays"-->
+                <!--android:prompt="@string/jurusan_prompt"-->
+
+                <Spinner
+                    android:id="@+id/spinnerPelajaran"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/squared_background_green" />
+
+                <!--android:entries="@array/spinner_arrays"-->
+                <!--android:prompt="@string/pelajaran_prompt"-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="25dp"
+                android:layout_centerInParent="true">
+
+                <!--<EditText-->
+                <!--android:id="@+id/ETMateri"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="hari/tanggal:"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"/>
+
+                <!--<DatePicker-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="50dp">-->
+
+                <!--</DatePicker>-->
+
+                <!--<EditText-->
+                <!--android:id="@+id/ETTempat"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
+
+                <Button
+                    android:id="@+id/startButton"
+                    android:layout_gravity="center"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/squared_background_green"
+                    android:text="mulai"
+                    android:textSize="25sp"
+                    android:textColor="@color/colorWhite"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
