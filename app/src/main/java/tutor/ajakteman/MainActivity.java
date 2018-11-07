@@ -3,6 +3,7 @@ package tutor.ajakteman;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 import tutor.ajakteman.adapter.MyPagerAdapter;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
         bottomBar = (BottomBar) findViewById(R.id.bottomBar);
         bottomBar.setOnTabSelectListener(this);
+
     }
 
 //    @Override

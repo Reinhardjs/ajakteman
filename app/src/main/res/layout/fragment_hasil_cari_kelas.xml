@@ -7,16 +7,16 @@
     android:orientation="vertical"
     tools:context=".siswa.kelas.umum.hasilcarikelas.HasilCariKelasFragment">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:background="@android:color/white"
-        android:elevation="8dp"
-        app:title="Ajak Teman"
-        app:titleTextColor="?attr/colorPrimary"
-        app:titleMarginStart="30dp"
-        app:logo="@drawable/ic_person_gray"/>
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?android:attr/actionBarSize"-->
+        <!--android:background="@android:color/white"-->
+        <!--android:elevation="8dp"-->
+        <!--app:title="Ajak Teman"-->
+        <!--app:titleTextColor="?attr/colorPrimary"-->
+        <!--app:titleMarginStart="30dp"-->
+        <!--app:logo="@drawable/ic_person_gray"/>-->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -33,6 +33,7 @@
                 android:id="@+id/headerText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
                 android:layout_marginBottom="10dp"
                 android:orientation="vertical">
 

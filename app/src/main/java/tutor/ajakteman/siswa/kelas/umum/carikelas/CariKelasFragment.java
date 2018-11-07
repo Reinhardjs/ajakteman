@@ -3,8 +3,6 @@ package tutor.ajakteman.siswa.kelas.umum.carikelas;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +11,6 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import tutor.ajakteman.R;
-import tutor.ajakteman.siswa.kelas.umum.hasilcarikelas.HasilCariKelasFragment;
 
 public class CariKelasFragment extends Fragment implements CariKelasContract.View {
 
@@ -21,6 +18,7 @@ public class CariKelasFragment extends Fragment implements CariKelasContract.Vie
 
     public CariKelasFragment() {
         // Required empty public constructor
+
     }
 
     @Override
@@ -28,27 +26,14 @@ public class CariKelasFragment extends Fragment implements CariKelasContract.Vie
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View root = inflater.inflate(R.layout.fragment_kelas_umum, container, false);;
+        View root = inflater.inflate(R.layout.fragment_kelas_umum, container, false);
 
-//        String arraySpinner[] = new String[]{
-//                "Item 1",
-//                "Item 2",
-//                "Item 3",
-//                "Item 4",
-//                "Item 5",
-//        };
-//
-//        ArrayAdapter<String> adapterJenjang = new ArrayAdapter<>(
-//                getActivity(),
-//                R.layout.spinner_item,
-//                R.id.row_item,
-//                arraySpinner);
+        mPresenter = new CariKelasPresenter(this);
 
         final Spinner spinnerJenjang = root.findViewById(R.id.spinnerJenjang);
         ArrayAdapter adapterJenjang = ArrayAdapter.createFromResource(getActivity(), R.array.spinner_jenjang_arrays, R.layout.spinner_item);
         adapterJenjang.setDropDownViewResource(R.layout.spinner_dropdown_item);
         spinnerJenjang.setAdapter(adapterJenjang);
-
 
         final Spinner spinnerKelas = root.findViewById(R.id.spinnerKelas);
         ArrayAdapter adapterKelas = ArrayAdapter.createFromResource(getActivity(), R.array.spinner_kelas_arrays, R.layout.spinner_item);
@@ -76,25 +61,31 @@ public class CariKelasFragment extends Fragment implements CariKelasContract.Vie
                 arguments.putString("jurusan", (String) spinnerJurusan.getSelectedItem());
                 arguments.putString("pelajaran", (String) spinnerPelajaran.getSelectedItem());
 
-                HasilCariKelasFragment fragment = new HasilCariKelasFragment();
-                fragment.setArguments(arguments);
-
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-                fragmentTransaction.replace(R.id.root_frame, fragment);
-                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                mPresenter.startFragment(arguments);
             }
         });
 
         return root;
     }
 
-
-    @Override
     public void setPresenter(CariKelasContract.Presenter presenter) {
         mPresenter = presenter;
     }
+
 }
+
+
+
+//        String arraySpinner[] = new String[]{
+//                "Item 1",
+//                "Item 2",
+//                "Item 3",
+//                "Item 4",
+//                "Item 5",
+//        };
+//
+//        ArrayAdapter<String> adapterJenjang = new ArrayAdapter<>(
+//                getActivity(),
+//                R.layout.spinner_item,
+//                R.id.row_item,
+//                arraySpinner);

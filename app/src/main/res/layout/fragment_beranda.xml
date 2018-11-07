@@ -41,7 +41,7 @@
             android:padding="15dp">
 
             <Button
-                android:id="@+id/BtnSiswa"
+                android:id="@+id/btnSiswa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_border_green"
@@ -53,7 +53,7 @@
                 android:layout_marginBottom="10sp"/>
 
             <Button
-                android:id="@+id/BtnTutor"
+                android:id="@+id/btnTutor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_border_green"

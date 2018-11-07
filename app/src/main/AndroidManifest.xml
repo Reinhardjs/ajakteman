@@ -12,16 +12,14 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".tentor.WelcomeScreenTentor" />
-        <activity android:name=".siswa.WelcomeScreenSiswa"/>
-        <activity android:name=".RegisterSiswaActivity"/>
+        <activity android:name=".siswa.WelcomeScreenSiswa" />
+        <activity android:name=".RegisterSiswaActivity" />
         <activity android:name=".WelcomeScreenActivity" />
-        <activity android:name=".RegisterTentorActivity">
-
-        </activity>
+        <activity android:name=".RegisterTentorActivity"></activity>
         <activity android:name=".AfterTentorRegistrationActivity" />
-        <activity android:name=".pembayaran.PembayaranActivity"></activity>
+        <activity android:name=".pembayaran.PembayaranActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".siswa.kelas.lobbykelas.LobbyKelasActivity"></activity>
     </application>
 
 </manifest>
