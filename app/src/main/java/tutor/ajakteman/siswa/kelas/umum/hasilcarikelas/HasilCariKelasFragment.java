@@ -1,37 +1,47 @@
 package tutor.ajakteman.siswa.kelas.umum.hasilcarikelas;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import java.util.ArrayList;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-import tutor.ajakteman.POJO.FilteredKelas;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import tutor.ajakteman.R;
 import tutor.ajakteman.adapter.RecyclerViewAdapter;
-import tutor.ajakteman.siswa.kelas.umum.kelasumumbaru.KelasUmumBaruFragment;
+import tutor.ajakteman.adapter.SpinnerArrayAdapter;
+import tutor.ajakteman.data.Kelas;
 
-///**
-// * A simple {@link Fragment} subclass.
-// * Activities that contain this fragment must implement the
-// * {@link HasilCariKelasFragment.OnFragmentInteractionListener} interface
-// * to handle interaction events.
-// * Use the {@link HasilCariKelasFragment#newInstance} factory method to
-// * create an instance of this fragment.
-// */
-public class HasilCariKelasFragment extends Fragment {
+public class HasilCariKelasFragment extends Fragment implements HasilCariKelasContract.View {
+
+    private HasilCariKelasContract.Presenter mPresenter;
+    private RecyclerViewAdapter adapter;
 
     public HasilCariKelasFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void setPresenter(HasilCariKelasContract.Presenter presenter) {
+        this.mPresenter = presenter;
+    }
+
+    private SpinnerArrayAdapter getAdapter(String... strings){
+        return new SpinnerArrayAdapter(getContext(),
+                R.layout.spinner_item, new ArrayList<String>(
+                Arrays.asList(strings)
+        ));
     }
 
     @Override
@@ -40,6 +50,8 @@ public class HasilCariKelasFragment extends Fragment {
         // Inflate the layout for this fragment
         View root =  inflater.inflate(R.layout.fragment_hasil_cari_kelas, container, false);
 
+        mPresenter = new HasilCariKelasPresenter(this);
+
         String jenjang = getArguments().getString("jenjang");
         String kelas = getArguments().getString("kelas");
         String jurusan = getArguments().getString("jurusan");
@@ -47,77 +59,102 @@ public class HasilCariKelasFragment extends Fragment {
 
 
         final Spinner spinnerJenjang = root.findViewById(R.id.spinnerJenjang);
-        ArrayAdapter adapterJenjang = ArrayAdapter.createFromResource(getActivity(), R.array.spinner_jenjang_arrays, R.layout.spinner_item);
-        adapterJenjang.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        spinnerJenjang.setAdapter(adapterJenjang);
-        spinnerJenjang.setSelection(adapterJenjang.getPosition(jenjang));
-
+        spinnerJenjang.setAdapter(getAdapter(jenjang));
 
         final Spinner spinnerKelas = root.findViewById(R.id.spinnerKelas);
-        ArrayAdapter adapterKelas = ArrayAdapter.createFromResource(getActivity(), R.array.spinner_kelas_arrays, R.layout.spinner_item);
-        adapterKelas.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        spinnerKelas.setAdapter(adapterKelas);
-        spinnerKelas.setSelection(adapterKelas.getPosition(kelas));
-
+        spinnerKelas.setAdapter(getAdapter(kelas));
 
         final Spinner spinnerJurusan = root.findViewById(R.id.spinnerJurusan);
-        ArrayAdapter adapterJurusan = ArrayAdapter.createFromResource(getActivity(), R.array.spinner_jurusan_arrays, R.layout.spinner_item);
-        adapterJurusan.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        spinnerJurusan.setAdapter(adapterJurusan);
-        spinnerJurusan.setSelection(adapterJurusan.getPosition(jurusan));
-
+        spinnerJurusan.setAdapter(getAdapter(jurusan));
 
         final Spinner spinnerPelajaran = root.findViewById(R.id.spinnerPelajaran);
-        ArrayAdapter adapterPelajaran = ArrayAdapter.createFromResource(getActivity(), R.array.spinner_pelajaran_arrays, R.layout.spinner_item);
-        adapterPelajaran.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        spinnerPelajaran.setAdapter(adapterPelajaran);
-        spinnerPelajaran.setSelection(adapterPelajaran.getPosition(pelajaran));
+        spinnerPelajaran.setAdapter(getAdapter(pelajaran));
 
 
         Button openClassButton = root.findViewById(R.id.openClassButton);
         openClassButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager.popBackStack();
+                Bundle arguments = new Bundle();
+                arguments.putString("jenjang", (String) spinnerJenjang.getSelectedItem());
+                arguments.putString("kelas", (String) spinnerKelas.getSelectedItem());
+                arguments.putString("jurusan", (String) spinnerJurusan.getSelectedItem());
+                arguments.putString("pelajaran", (String) spinnerPelajaran.getSelectedItem());
 
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.root_frame, new KelasUmumBaruFragment());
-                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                mPresenter.startFragment(arguments);
             }
         });
 
-        boolean jenjangBool = spinnerJenjang.getSelectedItem().equals(spinnerJenjang.getItemAtPosition(0));
-        boolean kelasBool = spinnerKelas.getSelectedItem().equals(spinnerKelas.getItemAtPosition(0));
-        boolean jurusanBool = spinnerJurusan.getSelectedItem().equals(spinnerJurusan.getItemAtPosition(0));
-        boolean pelajaranBool = spinnerPelajaran.getSelectedItem().equals(spinnerPelajaran.getItemAtPosition(0));
+        jurusan = jenjang.equals("SMP") ? "" : jurusan;
 
-//        if (!jenjangBool){
-//
-//        }
+        DatabaseReference kelasRef = FirebaseDatabase.getInstance()
+                .getReference("kelas")
+                .child(jenjang + "/" + (((!jurusan.isEmpty()) ? jurusan + "/" : "")))
+                .child(kelas);
 
-        final RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), getKelasList());
+        DatabaseReference detailKelasRef = FirebaseDatabase.getInstance()
+                .getReference("detail-kelas");
+
+        FirebaseRecyclerOptions<Kelas> options =
+                new FirebaseRecyclerOptions.Builder<Kelas>()
+                        .setIndexedQuery(
+                                kelasRef.orderByChild("pelajaran").equalTo(pelajaran), detailKelasRef, Kelas.class)
+                        .setLifecycleOwner(this)
+                        .build();
+
+        adapter = new RecyclerViewAdapter(this, getContext(), options);
         RecyclerView rv = root.findViewById(R.id.recyclerView);
         rv.setAdapter(adapter);
+        adapter.startListening();
+
+//        adapter.populateList(jenjang, jurusan, kelas, pelajaran);
 
         return root;
     }
 
-    public ArrayList<FilteredKelas> getKelasList(){
-        ArrayList<FilteredKelas> users = new ArrayList<>();
-        users.add(new FilteredKelas("1", "1", "1", "1", "1"));
-        users.add(new FilteredKelas("2", "2", "2", "2", "2"));
-        users.add(new FilteredKelas("3", "3", "3", "3", "3"));
-        users.add(new FilteredKelas("1", "1", "1", "1", "1"));
-        users.add(new FilteredKelas("2", "2", "2", "2", "2"));
-        users.add(new FilteredKelas("3", "3", "3", "3", "3"));
-        users.add(new FilteredKelas("1", "1", "1", "1", "1"));
-        users.add(new FilteredKelas("2", "2", "2", "2", "2"));
-        users.add(new FilteredKelas("3", "3", "3", "3", "3"));
-
-        return users;
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 2){
+//            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//            fragmentManager.popBackStack();
+//            Toast.makeText(getContext(), "POPPED", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+//    public ArrayList<Kelas> getKelasList(){
+//
+//        Kelas kelas1 = new Kelas("-LQo8FlIv4OqoaKFScRn");
+//        kelas1.setJenjang("SMP");
+//        kelas1.setJurusan("");
+//        kelas1.setKelas("VII");
+//        kelas1.setPelajaran("Matematika");
+//
+//        Kelas kelas2 = new Kelas("-LQo8SgKVYGFjguJg0-4");
+//        kelas2.setJenjang("SMA");
+//        kelas2.setJurusan("IPS");
+//        kelas2.setKelas("XII");
+//        kelas2.setPelajaran("B. Inggris");
+//
+//        ArrayList<Kelas> users = new ArrayList<>();
+//        users.add(kelas1);
+//        users.add(kelas2);
+//        users.add(kelas1);
+//        users.add(kelas2);
+//        users.add(kelas1);
+//        users.add(kelas2);
+//        users.add(kelas1);
+//        users.add(kelas2);
+//        users.add(kelas1);
+//        users.add(kelas2);
+//        users.add(kelas1);
+//        users.add(kelas2);
+//
+//        return users;
+//    }
 }

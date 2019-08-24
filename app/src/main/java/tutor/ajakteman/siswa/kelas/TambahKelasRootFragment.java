@@ -11,12 +11,12 @@ import tutor.ajakteman.R;
 
 public class TambahKelasRootFragment extends Fragment {
 
-    private static final String TAG = "RootFragment";
+    private static final String TAG = "TambahKelasRootFragment";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_root_tambah_kelas, container, false);
+        View view = inflater.inflate(R.layout.fragment_tambah_kelas_root, container, false);
 
         FragmentTransaction transaction = getFragmentManager()
                 .beginTransaction();

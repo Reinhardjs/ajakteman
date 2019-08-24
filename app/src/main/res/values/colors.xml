@@ -5,5 +5,5 @@
     <color name="colorAccent">#717070</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="activeBottomTabColor">#28b6c9</color>
-    <color name="inActiveBottomTabColor">#9e9e9e</color>
+    <color name="inActiveBottomTabColor">#5b5b5b</color>
 </resources>

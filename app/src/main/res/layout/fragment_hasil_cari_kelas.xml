@@ -118,10 +118,11 @@
 
             </LinearLayout>
 
-            <android.support.v7.widget.RecyclerView
+            <tutor.ajakteman.customview.KelasRecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
                 app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
 
             <LinearLayout

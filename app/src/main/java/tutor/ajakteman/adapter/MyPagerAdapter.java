@@ -6,8 +6,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
 
-import tutor.ajakteman.siswa.beranda.BerandaFragment;
 import tutor.ajakteman.siswa.chat.ChatFragment;
+import tutor.ajakteman.siswa.myclass.MyClassRootFragment;
 import tutor.ajakteman.siswa.profile.ProfileSiswaFragment;
 import tutor.ajakteman.siswa.kelas.TambahKelasRootFragment;
 import tutor.ajakteman.siswa.about.TentangFragment;
@@ -19,11 +19,11 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
 
     public MyPagerAdapter(FragmentManager fragmentManager){
         super(fragmentManager);
-        fragments.add(new BerandaFragment());
+        fragments.add(new MyClassRootFragment());
         fragments.add(new ChatFragment());
         fragments.add(new TambahKelasRootFragment());
-        fragments.add(new ProfileSiswaFragment());
         fragments.add(new TentangFragment());
+        fragments.add(new ProfileSiswaFragment());
     }
 
     @Override

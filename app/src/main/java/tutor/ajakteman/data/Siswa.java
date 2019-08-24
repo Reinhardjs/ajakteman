@@ -1,10 +1,17 @@
 package tutor.ajakteman.data;
 
-public class Siswa extends User{
-    private String jenjang;
+import java.util.Map;
 
-    public Siswa(String nama, String alamat, String jenjang) {
-        super("siswa", nama, alamat);
+public class Siswa extends User {
+    private String jenjang;
+    private Map<String, UserLobby> kelas;
+
+    public Siswa(){
+
+    }
+
+    public Siswa(String userID, String nama, String alamat, String jenjang) {
+        super(userID,"siswa", nama, alamat);
         this.jenjang = jenjang;
     }
 
@@ -19,11 +26,23 @@ public class Siswa extends User{
     }
 
     @Override
-    public String getState() {
-        return super.getState();
+    public String getType() {
+        return super.getType();
     }
 
     public String getJenjang() {
         return jenjang;
+    }
+
+    public void setJenjang(String jenjang) {
+        this.jenjang = jenjang;
+    }
+
+    public Map<String, UserLobby> getKelas() {
+        return kelas;
+    }
+
+    public void setKelas(Map<String, UserLobby> kelas) {
+        this.kelas = kelas;
     }
 }

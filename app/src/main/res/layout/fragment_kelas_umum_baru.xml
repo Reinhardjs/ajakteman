@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -97,6 +98,88 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:background="@drawable/squared_background_green" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_alignParentBottom="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lokasi"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/selectLocation"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:minWidth="225dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:background="@drawable/squared_background_green"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center_vertical"
+                            android:tint="#FFFFFF"
+                            app:srcCompat="@drawable/ic_place"/>
+
+                        <TextView
+                            android:id="@+id/address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/colorWhite"
+                            android:textAllCaps="false"
+                            android:textSize="16sp"
+                            android:ellipsize="end"
+                            android:text="Pilih lokasi"
+                            android:singleLine="true" />
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="-35dp"
+                        android:layout_alignRight="@id/selectLocation">
+                        <ImageView
+                            android:id="@+id/viewDetail"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:tint="#616161"
+                            app:srcCompat="@drawable/ic_eye"
+                            android:visibility="gone"/>
+
+                        <ProgressBar
+                            android:id="@+id/progressBar"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:visibility="gone"/>
+                    </FrameLayout>
+
+                </RelativeLayout>
 
             </LinearLayout>
 

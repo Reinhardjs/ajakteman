@@ -27,6 +27,7 @@ public class RegisterSiswaActivity extends AppCompatActivity {
     private EditText nama, alamat, email, kataSandi, jenjangPendidikan;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +52,7 @@ public class RegisterSiswaActivity extends AppCompatActivity {
     }
 
     private void register(){
-        String email = this.email.getText().toString().trim() ,
+        final String email = this.email.getText().toString().trim() ,
                 password = this.kataSandi.getText().toString().trim(),
                 nama = this.nama.getText().toString().trim(),
                 alamat = this.alamat.getText().toString().trim(),
@@ -78,19 +79,24 @@ public class RegisterSiswaActivity extends AppCompatActivity {
             return;
         }
 
-        final Siswa siswa = new Siswa(nama,alamat,jenjang);
-
         final ProgressDialog progressDialog = new ProgressDialog(RegisterSiswaActivity.this);
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Log in");
+        progressDialog.setMessage("Logging in");
         progressDialog.show();
+
         firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-                    databaseReference.child(firebaseUser.getUid()).setValue(siswa);
+
+                    String userID = firebaseUser.getUid();
+
+                    Siswa siswa = new Siswa(userID, nama, alamat, jenjang);
+
+                    databaseReference.child("users").child("siswa").child(userID).setValue(siswa);
+
                     progressDialog.dismiss();
                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 }
@@ -99,5 +105,6 @@ public class RegisterSiswaActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 }

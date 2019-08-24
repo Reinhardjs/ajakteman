@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="tutor.ajakteman">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <application
         android:allowBackup="true"
@@ -8,26 +14,74 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_api_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service
+            android:name=".fcm.FirebaseCloudMessaging"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".tentor.WelcomeScreenTentor" />
-        <activity android:name=".siswa.WelcomeScreenSiswa" />
-        <activity android:name=".RegisterSiswaActivity" />
-        <activity android:name=".WelcomeScreenActivity" />
-        <activity android:name=".RegisterTentorActivity"></activity>
-        <activity android:name=".AfterTentorRegistrationActivity" />
-        <activity android:name=".pembayaran.PembayaranActivity" />
-        <activity android:name=".SplashActivity">
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".tentor.WelcomeScreenTentor"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".siswa.WelcomeScreenSiswa"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RegisterSiswaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WelcomeScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RegisterTentorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AfterTentorRegistrationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".pembayaran.PembayaranActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".siswa.kelas.lobbykelas.LobbyKelasActivity"></activity>
+        <activity
+            android:name=".siswa.kelas.lobbykelas.LobbyKelasActivity"
+            android:screenOrientation="portrait" />
+
+
     </application>
 
 </manifest>

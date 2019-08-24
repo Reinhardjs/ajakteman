@@ -4,6 +4,7 @@ import android.widget.Filter;
 import java.util.ArrayList;
 
 import tutor.ajakteman.POJO.FilteredKelas;
+import tutor.ajakteman.data.Kelas;
 
 public class KelasSearchFilter extends Filter {
 
@@ -56,7 +57,7 @@ public class KelasSearchFilter extends Filter {
     @Override
     protected void publishResults(CharSequence constraint, FilterResults results) {
 
-        adapter.kelasList = (ArrayList<FilteredKelas>) results.values;
+        adapter.kelasList = (ArrayList<Kelas>) results.values;
 
         //REFRESH
         adapter.notifyDataSetChanged();

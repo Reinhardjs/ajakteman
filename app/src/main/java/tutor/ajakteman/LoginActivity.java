@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText email, password;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
-    private DatabaseReference databaseReference;
+    private String accountType;
 
 
     @Override
@@ -40,13 +41,16 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 login();
             }
         });
+
+
+        accountType = getIntent().getStringExtra("accountType");
     }
 
     private void login(){
@@ -70,26 +74,18 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    databaseReference.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            if(String.valueOf(dataSnapshot.child(firebaseAuth.getCurrentUser().getUid()).child("state").getValue()).equalsIgnoreCase("siswa")){
-                                progressDialog.dismiss();
-                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                            }
-                            else {
-                                progressDialog.dismiss();
-                                startActivity(new Intent(LoginActivity.this, AfterTentorRegistrationActivity.class));
-                            }
-                        }
 
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-
-                        }
-                    });
+                    if(String.valueOf(accountType).equalsIgnoreCase("siswa")){
+                        progressDialog.dismiss();
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    }
+                    else {
+                        progressDialog.dismiss();
+                        startActivity(new Intent(LoginActivity.this, AfterTentorRegistrationActivity.class));
+                    }
                 }
                 else{
+                    Log.d("AJAKTEMAN", "signInWithEmail:failure", task.getException());
                     progressDialog.dismiss();
                     Toast.makeText(LoginActivity.this,"Login failed",Toast.LENGTH_LONG).show();
                 }

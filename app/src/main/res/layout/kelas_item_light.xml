@@ -10,10 +10,10 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="10dp"
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
-        style="@style/MyCardViewStyle">
+        style="@style/MyLightCardViewStyle">
 
         <LinearLayout
             android:id="@+id/container"
@@ -26,14 +26,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="7dp"
                 android:weightSum="10">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="#2434808e"
+                    android:layout_height="60dp"
+                    android:background="#eeeeee"
                     android:orientation="horizontal"
+                    android:padding="10dp"
                     android:layout_weight="6">
 
                     <TextView
@@ -42,7 +42,7 @@
                         android:layout_gravity="center"
                         android:textStyle="bold"
                         android:textSize="16sp"
-                        android:textColor="#FFF"
+                        android:textColor="#353535"
                         android:text="0,5 Km"/>
 
                     <LinearLayout
@@ -52,12 +52,12 @@
                         android:orientation="horizontal">
 
                         <com.willy.ratingbar.ScaleRatingBar
-                            android:id="@+id/simpleRatingBar"
+                            android:id="@+id/ratingBar"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srb_numStars="5"
                             app:srb_minimumStars="1"
-                            app:srb_rating="3"
+                            app:srb_rating="1"
                             app:srb_starWidth="8dp"
                             app:srb_starHeight="16dp"
                             app:srb_starPadding="1dp"
@@ -66,7 +66,7 @@
                             app:srb_clickable="false"
                             app:srb_scrollable="false"
                             app:srb_clearRatingEnabled="true"
-                            app:srb_drawableEmpty="@drawable/ic_person_white"
+                            app:srb_drawableEmpty="@drawable/ic_person_light_gray"
                             app:srb_drawableFilled="@drawable/ic_person_gray">
                         </com.willy.ratingbar.ScaleRatingBar>
 
@@ -76,15 +76,18 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
                     android:layout_weight="4"
                     android:gravity="center">
                     <TextView
+                        android:id="@+id/textContent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:textStyle="bold"
                         android:textSize="16sp"
-                        android:textColor="#FFF"
+                        android:textColor="#353535"
                         android:text="SMP-11-IPS-Geografi:Flora dan Fauna"/>
                 </LinearLayout>
 

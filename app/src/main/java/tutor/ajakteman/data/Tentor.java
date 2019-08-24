@@ -3,7 +3,7 @@ package tutor.ajakteman.data;
 public class Tentor extends User {
     private String deskripsi, pengalaman1,pengalaman2, pendidikan1,pendidikan2, skill1, skill2;
     public Tentor(String nama, String alamat, String deskripsi, String pengalaman1, String pengalaman2, String pendidikan1, String pendidikan2, String skill1, String skill2 ) {
-        super("tentor", nama, alamat);
+        super("nullnullnull","tentor", nama, alamat);
         this.deskripsi = deskripsi;
         this.pengalaman1 = pengalaman1;
         this.pengalaman2 = pengalaman2;
@@ -24,8 +24,8 @@ public class Tentor extends User {
     }
 
     @Override
-    public String getState() {
-        return super.getState();
+    public String getType() {
+        return super.getType();
     }
 
     public String getDeskripsi() {

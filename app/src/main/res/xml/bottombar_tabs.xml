@@ -2,8 +2,8 @@
 <tabs>
     <tab
         id="@+id/notifikasi"
-        icon="@drawable/ic_notification"
-        title="Notifikasi" />
+        icon="@drawable/ic_list"
+        title="Kelas" />
     <tab
         id="@+id/chat"
         icon="@drawable/ic_chat"
@@ -11,13 +11,13 @@
     <tab
         id="@+id/tambahKelas"
         icon="@drawable/ic_add_circle"
-        title="Tambah Kelas" />
-    <tab
-        id="@+id/profil"
-        icon="@drawable/ic_person"
-        title="Profil" />
+        title="Tambah" />
     <tab
         id="@+id/tentang"
         icon="@drawable/ic_about"
         title="Tentang" />
+    <tab
+        id="@+id/profil"
+        icon="@drawable/ic_person"
+        title="Profil" />
 </tabs>

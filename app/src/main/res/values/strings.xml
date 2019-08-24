@@ -8,26 +8,26 @@
     <string name="jurusan_prompt">Jurusan</string>
     <string name="kelas_prompt">Kelas</string>
     <string name="pelajaran_prompt">Pelajaran</string>
+    <string name="google_maps_api_key">AIzaSyBzmF16cLqbm-rRWaykk_ySPLLZeJgAN-I</string>
 
     <string-array name="spinner_jenjang_arrays">
         <item>Jenjang</item>
-        <item>SD</item>
         <item>SMP</item>
         <item>SMA</item>
     </string-array>
 
-    <string-array name="spinner_kelas_arrays">
+    <string-array name="spinner_kelas_arrays_smp">
         <item>Kelas</item>
-        <item>I</item>
-        <item>II</item>
-        <item>III</item>
-        <item>IV</item>
-        <item>V</item>
-        <item>VI</item>
         <item>VII</item>
         <item>VIII</item>
         <item>IX</item>
+    </string-array>
+
+    <string-array name="spinner_kelas_arrays_sma">
+        <item>Kelas</item>
         <item>X</item>
+        <item>XI</item>
+        <item>XII</item>
     </string-array>
 
     <string-array name="spinner_jurusan_arrays">
@@ -39,10 +39,6 @@
     <string-array name="spinner_pelajaran_arrays">
         <item>Pelajaran</item>
         <item>Matematika</item>
-        <item>Fisika</item>
-        <item>Kimia</item>
-        <item>Biologi</item>
-        <item>Sejarah</item>
-        <item>Geografi</item>
+        <item>B. Inggris</item>
     </string-array>
 </resources>

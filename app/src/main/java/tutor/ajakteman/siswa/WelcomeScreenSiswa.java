@@ -31,7 +31,9 @@ public class WelcomeScreenSiswa extends AppCompatActivity {
         buttonMasuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(WelcomeScreenSiswa.this, LoginActivity.class));
+                Intent intent = new Intent(WelcomeScreenSiswa.this, LoginActivity.class);
+                intent.putExtra("accountType", "siswa");
+                startActivity(intent);
             }
         });
     }

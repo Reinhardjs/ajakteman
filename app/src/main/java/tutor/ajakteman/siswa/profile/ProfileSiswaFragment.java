@@ -18,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import tutor.ajakteman.R;
 import tutor.ajakteman.WelcomeScreenActivity;
+import tutor.ajakteman.fcm.FCMHandler;
 
 
 /**
@@ -41,16 +42,15 @@ public class ProfileSiswaFragment extends Fragment {
         email = rootView.findViewById(R.id.MenuProfileSiswaEmail);
         jenjang = rootView.findViewById(R.id.MenuProfileSiswaJenjang);
         button = rootView.findViewById(R.id.MenuProfileSiswaButtonLogOut);
-
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                namaSiswa.setText(String.valueOf(dataSnapshot.child(String.valueOf(FirebaseAuth.getInstance().getCurrentUser().getUid())).child("nama").getValue()));
-                alamat.setText("alamat    : "+String.valueOf(dataSnapshot.child(String.valueOf(FirebaseAuth.getInstance().getCurrentUser().getUid())).child("alamat").getValue()));
-                email.setText("email     : "+String.valueOf(FirebaseAuth.getInstance().getCurrentUser().getEmail()));
-                jenjang.setText("jenjang   : "+String.valueOf(dataSnapshot.child(String.valueOf(FirebaseAuth.getInstance().getCurrentUser().getUid())).child("jenjang").getValue()));
+//                namaSiswa.setText(String.valueOf(dataSnapshot.child(String.valueOf(FirebaseAuth.getInstance().getCurrentUser().getUid())).child("nama").getValue()));
+//                alamat.setText("alamat    : "+String.valueOf(dataSnapshot.child(String.valueOf(FirebaseAuth.getInstance().getCurrentUser().getUid())).child("alamat").getValue()));
+//                email.setText("email     : "+String.valueOf(FirebaseAuth.getInstance().getCurrentUser().getEmail()));
+//                jenjang.setText("jenjang   : "+String.valueOf(dataSnapshot.child(String.valueOf(FirebaseAuth.getInstance().getCurrentUser().getUid())).child("jenjang").getValue()));
             }
 
             @Override
@@ -62,6 +62,20 @@ public class ProfileSiswaFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // Deleting Firebase Cloud Messaging Instance ID
+                FCMHandler.deleteInstanceId(getContext());
+
+                // LOG TO FIREBASE DATABASE
+                String userID = String.valueOf(FirebaseAuth.getInstance()
+                        .getCurrentUser().getUid());
+
+                DatabaseReference myConnectionsRef = FirebaseDatabase.getInstance()
+                        .getReference("users/siswa")
+                        .child(userID).child("fcm_token");
+
+                myConnectionsRef.setValue("");
+
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getContext(), WelcomeScreenActivity.class));
             }
